@@ -6,10 +6,14 @@ using System.Web;
 
 namespace Lures.Models
 {
-    public class Prospect
+    public class User
     {
         [Key]
+        public int id { get; set; }
+
         public int prospectId { get; set; }
+
+        public int customerId { get; set; }
 
         [StringLength(64)]
         public string firstName { get; set; }

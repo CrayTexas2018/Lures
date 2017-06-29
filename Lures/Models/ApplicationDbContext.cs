@@ -31,5 +31,10 @@ namespace Lures.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<Models.Subscription> Subscriptions { get; set; }
+        public System.Data.Entity.DbSet<Models.Product> Products { get; set; }
+        public System.Data.Entity.DbSet<Models.Order> Orders { get; set; }
     }
 }

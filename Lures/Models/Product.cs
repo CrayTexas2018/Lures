@@ -7,5 +7,6 @@ namespace Lures.Models
 {
     public class Product
     {
+        public bool active { get; set; }
     }
 }
