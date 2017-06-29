@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Lures.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         // GET: Account
