@@ -10,6 +10,7 @@ namespace Lures.Controllers
     {
         public ActionResult Index()
         {
+            // See if user has cookie to log in
             return View();
         }
 

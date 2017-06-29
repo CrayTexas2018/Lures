@@ -180,6 +180,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Helpers\OrderHelper.cs" />
     <Compile Include="Helpers\ProductHelper.cs" />
     <Compile Include="Helpers\SubscriptionHelper.cs" />
@@ -235,7 +236,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Checkout\" />
-    <Folder Include="Views\TEst\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
