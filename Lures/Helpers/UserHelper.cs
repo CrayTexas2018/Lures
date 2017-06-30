@@ -22,6 +22,11 @@ namespace Lures.Helpers
             return db.Users.Find(userId);
         }
 
+        public User findUserByEmail(string email)
+        {
+            return db.Users.Where(u => u.email == email).FirstOrDefault();
+        }
+
         public List<User> getUsers()
         {
             return db.Users.ToList();

@@ -5,10 +5,14 @@ using System.Web;
 
 namespace Lures.Models
 {
-    public class Product
+    public class Vendor
     {
+        public int id { get; set; }
+
+        public string email { get; set; }
+
         public string name { get; set; }
 
-        public bool active { get; set; }
+        public int phone { get; set; }
     }
 }

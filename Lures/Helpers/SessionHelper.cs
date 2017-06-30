@@ -13,12 +13,27 @@ namespace Lures.Helpers
 
         public bool login(string email, string password)
         {
-            if (db.Users.Where(u => u.email == email).Where(u => u.password == password).FirstOrDefault() != null)
+            UserHelper userHelper = new UserHelper();
+            User user = userHelper.findUserByEmail(email);
+            if (user != null)
             {
-                setAuthCookie(email);
-                return true;
+                if (BCrypt.Net.BCrypt.Verify(password, user.password))
+                {
+                    setAuthCookie(email);
+                    return true;
+                }
             }
             return false;
+        }
+
+        public static bool isLoggedIn()
+        {
+            return HttpContext.Current.User.Identity.IsAuthenticated;
+        }
+
+        public static string getEmail()
+        {
+            return HttpContext.Current.User.Identity.Name;
         }
 
         public void setAuthCookie(string email)
