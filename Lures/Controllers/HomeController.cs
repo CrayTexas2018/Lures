@@ -27,5 +27,10 @@ namespace Lures.Controllers
 
             return View();
         }
+
+        public ActionResult Faq()
+        {
+            return View();
+        }
     }
 }

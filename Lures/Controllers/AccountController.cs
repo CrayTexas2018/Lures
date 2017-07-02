@@ -41,5 +41,15 @@ namespace Lures.Controllers
             ViewData["loginError"] = "Could not match email and password. Please try again.";
             return RedirectToAction("Login");
         }
+
+        public ActionResult Orders()
+        {
+            return View();
+        }
+
+        public ActionResult Subscriptions()
+        {
+            return View();
+        }
     }
 }

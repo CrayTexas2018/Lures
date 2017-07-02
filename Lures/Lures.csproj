@@ -190,6 +190,10 @@
     <Compile Include="Helpers\ProductHelper.cs" />
     <Compile Include="Helpers\SubscriptionHelper.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
+    <Compile Include="Migrations\201707020309512_Initial-Migration.cs" />
+    <Compile Include="Migrations\201707020309512_Initial-Migration.Designer.cs">
+      <DependentUpon>201707020309512_Initial-Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Order.cs" />
@@ -223,7 +227,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -241,10 +247,15 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Subscriptions.cshtml" />
     <Content Include="Views\Account\Orders.cshtml" />
+    <Content Include="Views\Home\Faq.cshtml" />
+    <Content Include="Views\Checkout\Signup.cshtml" />
+    <Content Include="Views\Checkout\Cart.cshtml" />
+    <Content Include="Views\Checkout\Confirmation.cshtml" />
+    <Content Include="Views\Shared\Partials\ContactForm.cshtml" />
+    <Content Include="Views\Shared\Partials\OrderSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Checkout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -260,6 +271,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707020309512_Initial-Migration.resx">
+      <DependentUpon>201707020309512_Initial-Migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

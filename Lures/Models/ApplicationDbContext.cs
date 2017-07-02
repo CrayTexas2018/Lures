@@ -23,7 +23,7 @@ namespace Lures.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LuresDB", throwIfV1Schema: false)
         {
         }
 
