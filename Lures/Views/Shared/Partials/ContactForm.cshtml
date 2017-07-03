@@ -1,4 +1,6 @@
-﻿@model Lures.Models.User
+﻿@using Lures.Helpers
+
+@model Lures.Models.User
 
 @Html.TextBoxFor(m => m.email, new { @class = "", @placeholder = "Email" })
 @Html.TextBoxFor(m => m.password, new { @class = "", @placeholder = "Password" })
@@ -7,8 +9,8 @@
 @Html.TextBoxFor(m => m.address1, new { @class = "", @placeholder = "Address" })
 @Html.TextBoxFor(m => m.address2, new { @class = "", @placeholder = "Apt, suite, etc." })
 @Html.TextBoxFor(m => m.city, new { @class = "", @placeholder = "City" })
-@Html.TextBoxFor(m => m.state, new { @class = "", @placeholder = "State" })
-@Html.TextBoxFor(m => m.zip, new { @class = "", @placeholder = "Zip" })
+@Html.DropDownListFor(m => m.state, StatesHelper.States)
+@Html.TextBoxFor(m => m.zip, new { @class = "", @placeholder = "Zip", @Value = (Model.zip > 0 ? Model.zip.ToString() : string.Empty) })
 @Html.TextBoxFor(m => m.phone, new { @class = "", @placeholder = "Phone" })
 
 

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Lures.Models
 {
     public class User
-    {
+    {        
         [Key]
         public int id { get; set; }
 
@@ -41,9 +42,9 @@ namespace Lures.Models
         [StringLength(2)]
         public string country { get; set; }
 
-        [Range(0, 999999999999999999)]
-        public int phone { get; set; }
+        public string phone { get; set; }
 
+        //[Index(IsUnique = true)]
         [StringLength(96)]
         public string email { get; set; }
 
@@ -81,5 +82,9 @@ namespace Lures.Models
 
         [StringLength(255)]
         public string notes { get; set; }
+
+        public DateTime created { get; set; }
+
+        public DateTime updated { get; set; }
     }
 }

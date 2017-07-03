@@ -82,6 +82,9 @@
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -148,9 +151,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
@@ -188,15 +188,38 @@
     <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Helpers\OrderHelper.cs" />
     <Compile Include="Helpers\ProductHelper.cs" />
+    <Compile Include="Helpers\StatesHelper.cs" />
     <Compile Include="Helpers\SubscriptionHelper.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Migrations\201707020309512_Initial-Migration.cs" />
     <Compile Include="Migrations\201707020309512_Initial-Migration.Designer.cs">
       <DependentUpon>201707020309512_Initial-Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707020630022_user-updated.cs" />
+    <Compile Include="Migrations\201707020630022_user-updated.Designer.cs">
+      <DependentUpon>201707020630022_user-updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707020657442_phone-to-string.cs" />
+    <Compile Include="Migrations\201707020657442_phone-to-string.Designer.cs">
+      <DependentUpon>201707020657442_phone-to-string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707030306578_credit-card.cs" />
+    <Compile Include="Migrations\201707030306578_credit-card.Designer.cs">
+      <DependentUpon>201707030306578_credit-card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707030323293_product-total.cs" />
+    <Compile Include="Migrations\201707030323293_product-total.Designer.cs">
+      <DependentUpon>201707030323293_product-total.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707030402331_string-to-decimal.cs" />
+    <Compile Include="Migrations\201707030402331_string-to-decimal.Designer.cs">
+      <DependentUpon>201707030402331_string-to-decimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\CreditCard.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\PaymentVM.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Subscription.cs" />
@@ -253,6 +276,7 @@
     <Content Include="Views\Checkout\Confirmation.cshtml" />
     <Content Include="Views\Shared\Partials\ContactForm.cshtml" />
     <Content Include="Views\Shared\Partials\OrderSummary.cshtml" />
+    <Content Include="Views\Shared\Partials\CreditCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +299,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707020309512_Initial-Migration.resx">
       <DependentUpon>201707020309512_Initial-Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707020630022_user-updated.resx">
+      <DependentUpon>201707020630022_user-updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707020657442_phone-to-string.resx">
+      <DependentUpon>201707020657442_phone-to-string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707030306578_credit-card.resx">
+      <DependentUpon>201707030306578_credit-card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707030323293_product-total.resx">
+      <DependentUpon>201707030323293_product-total.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707030402331_string-to-decimal.resx">
+      <DependentUpon>201707030402331_string-to-decimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

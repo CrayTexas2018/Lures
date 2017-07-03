@@ -18,7 +18,7 @@ namespace Lures.Helpers
             return product;
         }
 
-        public Product findOrder(int product_id)
+        public Product findProduct(int product_id)
         {
             return db.Products.Find(product_id);
         }

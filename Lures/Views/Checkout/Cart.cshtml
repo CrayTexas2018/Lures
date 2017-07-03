@@ -4,5 +4,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model Lures.Models.PaymentVM
+
+@using (Html.BeginForm("postCart", "Checkout", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.order.shippingFirstName, new { @class = "", @placeholder = "Frist Name" })
+    @Html.TextBoxFor(m => m.order.shippingLastName, new { @class = "", @placeholder = "Last Name" })
+    @Html.TextBoxFor(m => m.order.shippingAddress, new { @class = "", @placeholder = "Address" })
+    @Html.TextBoxFor(m => m.order.shippingAddress2, new { @class = "", @placeholder = "Apt, Etc. " })
+    @Html.TextBoxFor(m => m.order.shippingCity, new { @class = "", @placeholder = "City" })
+    @Html.TextBoxFor(m => m.order.shippingState, new { @class = "", @placeholder = "State" })
+    @Html.TextBoxFor(m => m.order.shippingZip, new { @class = "", @placeholder = "Zip" })
+
+    @Html.TextBoxFor(m => m.order.billingFirstName, new { @class = "", @placeholder = "Billing Frist Name" })
+    @Html.TextBoxFor(m => m.order.billingLastName, new { @class = "", @placeholder = " Billing Last Name" })
+    @Html.TextBoxFor(m => m.order.billingAddress, new { @class = "", @placeholder = "Billing Address" })
+    @Html.TextBoxFor(m => m.order.billingAddress2, new { @class = "", @placeholder = "Billing Apt, Etc. " })
+    @Html.TextBoxFor(m => m.order.billingCity, new { @class = "", @placeholder = "Billing City" })
+    @Html.TextBoxFor(m => m.order.billingState, new { @class = "", @placeholder = "Billing State" })
+    @Html.TextBoxFor(m => m.order.billingZip, new { @class = "", @placeholder = "Billing Zip" })
+
+    <br />
+
+    @Html.TextBoxFor(m => m.order.creditCardNumber, new { @class = "", @placeholder = "Card Number" })
+    @Html.TextBoxFor(m => m.order.expireMonth, new { @class = "", @placeholder = "MM" })
+    @Html.TextBoxFor(m => m.order.expireYear, new { @class = "", @placeholder = "YY" })
+    @Html.TextBoxFor(m => m.order.cvv, new { @class = "", @placeholder = "CVV" })
+
+    <br />
+
+    @(Model?.product?.name == null ? ">>Product Name<<" : Model.product.name) 
+    @(Model?.product?.subtotal == null ? ">>Product Subtotal<<" : Model.product.name) 
+    @(Model?.product?.shipping == null ? ">>Product Shipping<<" : Model.product.name) 
+    @(Model?.product?.total == null ? ">>Product Grand Total<<" : Model.product.name) 
+    <br />
+
+    @Html.HiddenFor(m => m.product.id)
+
+    <input type="submit" />
+}
 <h2>Cart</h2>
 

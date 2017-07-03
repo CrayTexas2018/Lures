@@ -1,0 +1,6 @@
+﻿@model Lures.Models.CreditCard
+
+@Html.TextBoxFor(m => m.number, new { @class = "", @placeholder = "Card Number" })
+@Html.DropDownListFor(m => m.expirationYear, Enumerable.Range(DateTime.Now.Year, 10).Select(x => new SelectListItem { Text = x.ToString() }), new { @class = "", @placeholder = "YY" })
+@Html.DropDownListFor(m => m.expirationMonth, Enumerable.Range(DateTime.Now.Month, 12).Select(x => new SelectListItem { Text = x.ToString() }), new { @class = "", @placeholder = "MM" })
+@Html.TextBoxFor(m => m.cvv, new { @class = "", @placeholder = "CVV" })

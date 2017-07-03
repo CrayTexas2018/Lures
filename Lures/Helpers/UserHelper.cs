@@ -10,10 +10,20 @@ namespace Lures.Helpers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public User createOrUpdateUser(User user)
+        public User createUser(User user,  HttpRequestBase request)
         {
+            PasswordHelper passwordHelper = new PasswordHelper();
+            user.password = passwordHelper.hashPassword(user.password);
+            user.created = DateTime.Now.Date;
+            user.updated = DateTime.Now.Date;
+            user.country = "US";
+            user.ipAddress = request.UserHostAddress;
             db.Users.Add(user);
             db.SaveChanges();
+            // Log user in
+            SessionHelper sh = new SessionHelper();
+            sh.setAuthCookie(user.email);
+
             return user;
         }
 

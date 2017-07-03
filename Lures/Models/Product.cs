@@ -15,7 +15,11 @@ namespace Lures.Models
 
         public string sku { get; set; }
 
-        public decimal price { get; set; }
+        public decimal total { get; set; }
+
+        public decimal subtotal { get; set; }
+
+        public decimal shipping { get; set; }
 
         public decimal cogs { get; set; }
 

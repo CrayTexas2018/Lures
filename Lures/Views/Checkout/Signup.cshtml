@@ -4,5 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using (Html.BeginForm("PostSignup", "Checkout", FormMethod.Post))
+{
+    @Html.Partial("Partials/ContactForm")
+    <input type="submit" />
+}
+
 <h2>Signup</h2>
 

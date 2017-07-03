@@ -21,6 +21,7 @@ namespace Lures.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            SessionHelper sh = new SessionHelper();
             ViewData["returnUrl"] = returnUrl;
             return View();
         }
